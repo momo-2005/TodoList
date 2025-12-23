@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export const InputForm = ({ taskList, setTaskList }) => {
+export const InputForm = ({ taskList, setTaskList, selectedDate }) => {
   const [inputText, setInputText] = useState("");
 
   const addTask = (e) => {
@@ -18,6 +18,7 @@ export const InputForm = ({ taskList, setTaskList }) => {
         id: taskList.length,
         text: inputText,
         completed: false,
+        date: selectedDate.toLocaleDateString('sv-SE'), // YYYY-MM-DD
       },
     ]);
     // console.log(taskList);
